@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EDSL Administration System</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+    <style>
+        #main-divider {
+            border: 2px solid black;
+        }
+
+        #tableDiv {
+            height: 400px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ui six item menu">
+        <a class="item" href="/season">Season Manager</a>
+        <a class="item" href="/results">Results Manager</a>
+        <a class="item">Clubs</a>
+        <a class="item">Teams</a>
+        <a class="item">Players</a>
+        <a class="item">Reporting</a>
+    </div>
+
+    <div class="ui container" id="resultsDiv">
+        <div class="ui segment">
+            <h1>Results Manager</h1>
+            <div class="ui divider"></div>
+            <div class="ui selection dropdown">
+                <input type="hidden" name="division">
+                <i class="dropdown icon"></i>
+                <div class="default text">Division</div>
+                <div class="menu">
+                    <div class="header">Division</div>
+                    <div class="item" data-value="1">Division A</div>
+                    <div class="item" data-value="1">Division B</div>
+                    <div class="item" data-value="1">Division C</div>
+                </div>
+            </div>
+            <div class="ui selection dropdown">
+                <input type="hidden" name="division">
+                <i class="dropdown icon"></i>
+                <div class="default text">Round Number</div>
+                <div class="menu">
+                    <div class="header">Round Number</div>
+                    <div class="item" data-value="1">1</div>
+                    <div class="item" data-value="2">2</div>
+                    <div class="item" data-value="3">3</div>
+                    <div class="item" data-value="4">4</div>
+                    <div class="item" data-value="5">5</div>
+                    <div class="item" data-value="6">6</div>
+                    <div class="item" data-value="7">7</div>
+                    <div class="item" data-value="8">8</div>
+                    <div class="item" data-value="9">9</div>
+                    <div class="item" data-value="10">10</div>
+                    <div class="item" data-value="11">11</div>
+                    <div class="item" data-value="12">12</div>
+                    <div class="item" data-value="13">13</div>
+                    <div class="item" data-value="14">14</div>
+                    <div class="item" data-value="15">15</div>
+                    <div class="item" data-value="16">16</div>
+                </div>
+            </div>
+            <button class="ui button" id="showMatches">Show Matches</button>
+            <div class="ui hidden divider"></div>
+            <div id="tableDiv" style="display: none">
+                <table class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th>Game</th>
+                            <th>Home Team</th>
+                            <th>Home Team Score</th>
+                            <th>Away Team</th>
+                            <th>Away Team Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td>1</td>
+                            <td>WANTIRNA-A</td>
+                            <td>N/A</td>
+                            <td>BYE</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>MOUNT WAVERLEY-A</td>
+                            <td>4</td>
+                            <td>OAKLEIGH-A</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>SCORESBY-A</td>
+                            <td>3</td>
+                            <td>FERNTREE GULLY-A</td>
+                            <td>1<d>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>MITCHAM-A</td>
+                            <td>1</td>
+                            <td>MURRUMBEENA-A</td>
+                            <td>0<d>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>RINGWOOD-A</td>
+                            <td>0</td>
+                            <td>BEACONSFIELD UPPER-A</td>
+                            <td>1<d>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>SCORESBY-A</td>
+                            <td>3</td>
+                            <td>FERNTREE GULLY-A</td>
+                            <td>1<d>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>WONGA PARK-A</td>
+                            <td>2</td>
+                            <td>BELGRAVE-A</td>
+                            <td>2<d>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>MOUNT EVELYN-A</td>
+                            <td>0</td>
+                            <td>LILYDALE-A</td>
+                            <td>0<d>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="ui hidden divider"></div>
+            <button class="ui disabled primary button" id="saveResults">Save Results</button>
+            <button class="ui disabled button" id="viewLadder">View Ladder</button>
+        </div>
+    </div>
+
+    <div class="ui container" id="ladder" style="display: none">
+        <div class="ui segment">
+            <button class="ui button" id="resultsBack">Back</button>
+            <table class="ui celled table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Club</th>
+                        <th>P</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>PTS</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td>1</td>
+                        <td>MOUNT WAVERLEY-A</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>SCORESBY-A</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>MITCHAM-A</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>BEACONSFIELD UPPER-A</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>WONGA PARK-A</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>BELGRAVE-A</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>MOUNT EVELYN-A</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>LILYDALE-A</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>OAKLEIGH-A</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>FERNTREE GULLY-A</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>MURRUMBEENA-A</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>RINGWOOD-A</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>WANTIRNA-A</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.ui.dropdown')
+                .dropdown();
+
+            $("#showMatches").click(function () {
+                $("#tableDiv").fadeIn("fast");
+                $("#saveResults").toggleClass("disabled")
+            });
+
+            $("#saveResults").click(function () {
+                $("#viewLadder").toggleClass("disabled");
+            });
+
+            $("#viewLadder").click(function () {
+                $("#resultsDiv").fadeOut("fast", function () {
+                    $("#ladder").fadeIn("fast");
+                });
+            });
+
+            $("#resultsBack").click(function () {
+                $("#ladder").fadeOut("fast", function () {
+                    $("#resultsDiv").fadeIn("fast");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
