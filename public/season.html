@@ -7,21 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>EDSL Administration System</title>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
-  <style>
-    #main-divider {
-      border: 2px solid black;
-    }
-
-    #tableDiv {
-      height: 400px;
-      overflow: auto;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="/css/season.css">
 </head>
 
 <body>
   <div class="ui six item menu">
-    <a class="item" href="/season">Season Manager</a>
+    <a class="active item" href="/season">Season Manager</a>
     <a class="item" href="/results">Results Manager</a>
     <a class="item">Clubs</a>
     <a class="item">Teams</a>
@@ -60,10 +51,6 @@
             <i class="dropdown icon"></i>
             <div class="default text">Division</div>
             <div class="menu">
-              <div class="header">Division</div>
-              <div class="item" data-value="1">Division A</div>
-              <div class="item" data-value="1">Division B</div>
-              <div class="item" data-value="1">Division C</div>
             </div>
           </div>
           <button class="ui disabled button" id="createDraw">Create Draw</button>
@@ -88,269 +75,10 @@
     </div>
   </div>
 
-  <div class="ui container" id="drawDiv" style="display: none">
-    <div class="ui segment">
-      <button class="ui button" id="seasonBack">Back</button>
-      <table class="ui celled table">
-        <thead>
-          <tr>
-            <th>Round</th>
-            <th>Match 1</th>
-            <th>Match 2</th>
-            <th>Match 3</th>
-            <th>Match 4</th>
-            <th>Match 5</th>
-            <th>Match 6</th>
-            <th>Match 7</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <tr>
-            <td>1</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>13</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>14</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>15</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>MOUNT WAVERLEY-A VS OAKLEIGH-A</td>
-            <td>SCORESBY-A VS FERNTREE GULLY-A</td>
-            <td>WANTIRNA-A BYE</td>
-            <td>MITCHAM-A VS MURRUMBEENA-A</td>
-            <td>RINGWOOD-A VS BEACONSFIELD UPPER-A</td>
-            <td>WONGA PARK-A VS BELGRAVE-A</td>
-            <td>MOUNT EVELYN-A VS LILYDALE-A
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js"></script>
-  <script>
-    $(document).ready(function () {
-
-      var seasonName;
-      var numberRounds;
-      var startDate;
-
-      $("#drawDiv").hide();
-
-      $("#seasonSave").click(function () {
-        $("#createDraw").toggleClass("disabled");
-      });
-
-      $("#createDraw").click(function () {
-        $("#viewDraw").toggleClass("disabled");
-      });
-
-      $("#seasonStartDate").change(function () {
-        numberRounds = $("#seasonNumberRounds").val();
-        startDate = new Date($("#seasonStartDate").val());
-        updateDates();
-      });
-
-      $("#seasonNumberRounds").change(function () {
-
-        numberRounds = $("#seasonNumberRounds").val();
-        if (numberRounds <= 16) {
-          startDate = new Date($("#seasonStartDate").val());
-          updateDates();
-        }
-      });
-
-      $("#viewDraw").click(function () {
-        $("#seasonDiv").fadeOut("fast", function () {
-          $("#drawDiv").fadeIn("fast");
-        });
-      });
-
-
-      $("#seasonBack").click(function () {
-        $("#drawDiv").fadeOut("fast", function () {
-          $("#seasonDiv").fadeIn("fast");
-        });
-      });
-
-      $('.ui.dropdown')
-        .dropdown();
-
-      function updateDates() {
-        var tempDate = startDate;
-
-        console.log(tempDate);
-        console.log(startDate);
-
-        $("#tableBody").empty();
-        for (i = 0; i < numberRounds; i++) {
-          $("#tableBody").append("<tr><td data-label='Round'>Round " + (i + 1) + "</td><td data-label='Date'>" + tempDate.toDateString() + "</td></tr>");
-          tempDate.setDate(tempDate.getDate() + 7);
-        }
-      }
-    });
-  </script>
+  <script src="/scripts/season.js"></script>
 </body>
 
 </html>

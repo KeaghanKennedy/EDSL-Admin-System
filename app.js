@@ -1,6 +1,9 @@
-var express = require('express'),
-    app = express();
+var express = require('express');
+var app = express();
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 
+app.use(express.static("public"));
 
 app.get("/", function (req, res) {
     res.redirect("/season");
