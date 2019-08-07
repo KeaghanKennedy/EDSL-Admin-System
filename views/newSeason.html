@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EDSL Administration System</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+    <link rel="stylesheet" type="text/css" href="/css/season.css">
+</head>
+
+<body>
+    <div class="ui six item menu">
+        <a class="active item" href="/season">Season Manager</a>
+        <a class="item" href="/results">Results Manager</a>
+        <a class="item">Clubs</a>
+        <a class="item">Teams</a>
+        <a class="item">Players</a>
+        <a class="item">Reporting</a>
+    </div>
+
+    <div class="ui container segment">
+        <form class="ui form" action="/season" method="POST">
+            <div class="ui labeled input">
+                <div class="ui label">Start Date</div>
+                <input type="date" id="seasonStartDate">
+            </div>
+            <div class="ui divider"></div>
+            <div class="ui labeled input">
+                <div class="ui label">Number of Rounds</div>
+                <input type="number" id="seasonNumberRounds" min="1" max="16">
+            </div>
+    </div>
+    <div class="ui divider"></div>
+    <input class="ui black big basic button" type="submit">
+    </form>
+    </div>
+
+</body>
+
+</html>

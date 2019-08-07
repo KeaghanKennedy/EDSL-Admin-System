@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+
+<div class="ui main container segment">
+    <div class="ui huge header">Player Index</div>
+    <h4>Name</h4>
+    <div class="ui divider"></div>
+    <div class="ui middle aligned selection list">
+        <% players.forEach(function(player){ %>
+        <div class="item">
+            <div class="content">
+                <div class="header"><%= player.firstName + " " + player.surname %></div>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+</div>
+
+<% include ../partials/footer %>

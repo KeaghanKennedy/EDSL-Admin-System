@@ -1,0 +1,59 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">New Player</div>
+    <form class="ui form" action="/players" method="POST">
+        <div class="two fields">
+            <div class="field">
+                <label>First Name</label>
+                <input type="text" name="player[firstName]" placeholder="First Name">
+            </div>
+            <div class="field">
+                <label>Surname</label>
+                <input type="text" name="player[surname]" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="two fields">
+            <div class="field">
+                <label>Date of Birth</label>
+                <input type="date" name="player[dob]">
+            </div>
+            <div class="field">
+                <label>Gender</label>
+                <div class="ui selection dropdown">
+                    <input type="hidden" name="player[gender]">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Gender</div>
+                    <div class="menu">
+                        <div class="item" data-value="male">Male</div>
+                        <div class="item" data-value="female">Female</div>
+                        <div class="item" data-value="other">Other</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="two fields">
+            <div class="twelve wide field">
+                <label for="">Adress</label>
+                <input type="text" name="player[adress]" placeholder="Address">
+            </div>
+            <div class="four wide field">
+                <label for="">Postcode</label>
+                <input type="text" name="player[postpode]" placeholder="Postcode">
+            </div>
+        </div>
+        <div class="two fields">
+            <div class="ten wide field">
+                <label for="">Email</label>
+                <input type="text" name="player[email]" placeholder="Address">
+            </div>
+            <div class="six wide field">
+                <label for="">Mobile</label>
+                <input type="text" name="player[mobile]" placeholder="Postcode">
+            </div>
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+    </form>
+</div>
+
+<% include ../partials/footer %>

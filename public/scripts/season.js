@@ -1,8 +1,11 @@
 $(document).ready(function () {
-
     var seasonName;
     var numberRounds;
     var startDate;
+
+    for (i = new Date().getFullYear(); i > 1989; i--) {
+        $('#year-drop-down').append("<div class='item' data-value='" + i + "'>" + i + "</div>");
+    }
 
     $("#drawDiv").hide();
 
