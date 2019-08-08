@@ -12,24 +12,16 @@ function seedDB() {
         else {
             for (i = 0; i < 50; i++) {
                 Player.create({
-                    fistName: faker.name.firstName(),
+                    firstName: faker.name.firstName(),
                     surname: faker.name.lastName(),
                     dob: faker.date.past(),
                     gender: gender[Math.floor(Math.random() * gender.length)],
-                    mobile: faker.phone.phoneNumber(),
+                    mobile: 123456789,
                     email: faker.internet.email(),
                     adress: faker.address.streetAddress(),
-                    postcode: faker.address.zipCode()
-                }, function (err, newPlayer) {
-                    if (err) {
-                        console.log(err);
-                    }
-                    else {
-                        console.log(newPlayer);
-                    }
-                });
+                    postcode: 1234
+                }, function(){});
             }
-
         }
     })
 }
